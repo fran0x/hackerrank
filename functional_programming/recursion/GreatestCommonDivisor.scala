@@ -2,16 +2,16 @@
 
 object GreatestCommonDivisor extends App {
 
-    def gcd(x: Int, y: Int): Int =
+  def gcd(x: Int, y: Int): Int =
 	{
-        y match {
-            case 0 => x
-            case _ => gcd(y, x%y)
-        }
-   	}
+    y match {
+      case 0 => x
+      case _ => gcd(y, x%y)
+    }
+  }
   
-  	def parseLine(line:String):List[Int] = line.trim().split(" ").toList.map(_.toInt)
+  def parseLine(line:String):List[Int] = line.trim().split(" ").toList.map(_.toInt)
 
 	val input = parseLine(io.Source.stdin.getLines().next)
-    println(gcd(input.head, input.reverse.head))
+  println(gcd(input.head, input.reverse.head))
 }
