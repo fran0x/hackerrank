@@ -2,14 +2,14 @@
 
 object StringMingling extends App {
 
-  def f(pawel: String, shaka: String): String =
+  def f(pawel: List[Char], shaka: List[Char]): List[Char] =
 	{
-    if (pawel.isEmpty) return ""
-    return pawel.take(1) + shaka.take(1) + f(pawel.tail, shaka.tail)
+    if (pawel.isEmpty) return List.empty
+    return pawel.head :: shaka.head :: f(pawel.tail, shaka.tail)
   }
 
   val lines = io.Source.stdin.getLines()
-	val pawel = lines.next
-  val shaka = lines.next
-  println(f(pawel, shaka))
+	val pawel = lines.next.toList
+  val shaka = lines.next.toList
+  println(f(pawel, shaka).mkString)
 }
