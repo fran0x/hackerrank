@@ -1,7 +1,10 @@
 //https://www.hackerrank.com/challenges/functional-programming-warmups-in-recursion---gcd
 
+import scala.annotation.tailrec
+
 object GreatestCommonDivisor extends App {
 
+  @tailrec
   def gcd(x: Int, y: Int): Int =
 	{
     y match {
