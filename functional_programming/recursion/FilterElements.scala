@@ -1,7 +1,5 @@
 //https://www.hackerrank.com/challenges/filter-elements
 
-
-
 object FilterElements extends App {
 
 	import scala.collection.mutable.{Map => Map}
