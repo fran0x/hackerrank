@@ -4,13 +4,15 @@ object SuperDigit extends App {
 
 	import scala.annotation.tailrec
 
+	def sumDigit(s: String):BigInt = BigInt(s.foldLeft(0)(_ + _.asDigit))
+
 	@tailrec
-	def superDigit(x: String):Int = {
-		if (x.size == 1) x.toInt
-		else superDigit(x.toList.map(_.asDigit).sum.toString)
+	def superDigit(x: BigInt):BigInt = {
+		if (x < 10) x
+		else superDigit(sumDigit(x.toString))
 	}
 
 	val Array(n, k) = io.StdIn.readLine.split(" ")
-	val x = n * k.toInt
+	val x = sumDigit(n) * k.toLong
 	println(superDigit(x))
 }
