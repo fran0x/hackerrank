@@ -14,8 +14,8 @@ object SuperQueen extends App {
     def placeQueens(bsize: Int, col: Int): List[List[Queen]] = col match {
 		case 0 => List(Nil)
 		case _ => for {
-			queens <- placeQueens(col-1)
-			row <- 1 to col
+			queens <- placeQueens(bsize, col-1)
+			row <- 1 to bsize
 			queen = (col, row)
 			if (isSafe(queen, queens))
 		} yield queen :: queens
