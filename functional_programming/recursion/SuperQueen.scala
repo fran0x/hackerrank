@@ -1,6 +1,6 @@
 //https://www.hackerrank.com/challenges/super-queens-on-a-chessboard
 
-//typical propagation and backtracking problem
+//typical propagation and backtracking problem, here addressed with a different approach
 object SuperQueen extends App {
 
 	type Queen = (Int, Int)
