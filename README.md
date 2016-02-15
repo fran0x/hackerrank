@@ -8,4 +8,4 @@ This a personal project for practicing with Scala programming language via [Hack
 
 The exercises are included in the Domain "Functional Programming".
 
-Please do not copy the solutions here to pass the exercises: find your own implementation and only then, if you like, compare with the implementation I made (and please comment / give feedback!).
+*Please do not copy the solutions here to pass the exercises: instead of that I recommend you to find your own implementation and only then compare with the implementation I made (and please post a comment / give some feedback!).*
