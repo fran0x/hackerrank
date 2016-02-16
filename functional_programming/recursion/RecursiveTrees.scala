@@ -1,7 +1,5 @@
 //https://www.hackerrank.com/challenges/fractal-trees
 
-
-
 object RecursiveTrees extends App {
 
 	import scala.collection.mutable.ListBuffer
