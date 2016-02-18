@@ -1,42 +1,31 @@
  //https://www.hackerrank.com/challenges/functions-and-fractals-sierpinski-triangles
 
+// iteration 0: triangle = 32 rows x 63 columns
+// iteration 1: triangle = 16 rows x 31 columns >> 16 = 32 / 2; 31 = (63 - 1) / 2 >> 
+// iteration 2: triangle = 8 rows x 15 columns
+// iteration 3: triangle = 4 rows x 7 columns
+// iteration 4: triangle = 2 rows x 3 columns
+// iteration 5: triangle = 1 row x 1 column
+
 object SierpinskiTriangles extends App {
 
 	val Rows = 32
 	val Columns = 63
 
 	val One = '1'
-	val Dash = '_' // more than Dash it should be called Underscore
+	val Dash = '_'
 
-	// create a row with 'side' dashes at each side filling with ones the rest
-	def onesRow(side: Int) = Array.fill(size)(Dash) ++ Array.fill(Columns - 2 * side)(One) ++ Array.fill(side)(Dash) 
-	def isOne(row: Array[Char], c: Int) = row(c) == One // check if a certain cell has a one
-	def dashesTriangle(triangle: Array[Array[Char]], m)
-	def dashesRow(row: Array[Char], m: Int, d: Int) = if (isOne(row(c))) (m - d to m + d) foreach(row(_) = Dash) // change from ones to dashes
+	def print(triangle: Array[Array[Char]]) = triangle map (x  => println(x.mkString))
+	def slice(list: List[Int], n: Int) = list.drop(n).dropRight(n)
+	def ones(n: Int) = Array.fill(n)(Dash) ++ Array.fill(Columns - 2 * n)(One) ++ Array.fill(n)(Dash) 
+	def dashRow(row: Array[Char], columns: List[Int]) = columns foreach (row(_) = Dash)
+	def dashTriangle(triangle: Array[Array[Char]], rows: List[Int], columns: List[Int]) = rows.zipWithIndex foreach (x => dashRow(triangle(x._1), slice(columns, x._2))) 
 
-	
-	// iteration 0: triangle = 32 rows x 63 columns
-	// iteration 1: triangle = 16 rows x 31 columns >> 16 = 32 / 2; 31 = (63 - 1) / 2 >> 
-	// iteration 2: triangle = 8 rows x 15 columns
-	// iteration 3: triangle = 4 rows x 7 columns
-	// iteration 4: triangle = 2 rows x 3 columns
-	// iteration 5: triangle = 1 row x 1 column
+	val n = io.StdIn.readInt
 
-	// at each iteration an input is the triangle from the previous iteration, and then, based on the indexes, we change elements from 1 to _
-	// starting from the top we work with a list of center points for inverted triangles; sometimes it will
-	
-	def iterate(n: Int, prev: Array[Array[Char]], r: Int, c: Int):Array[Array[Char]] = n match {
-		case 0 => prev
-		case _ => {
-			
-		}
-	}
-
-	val n = io.StdIn.readInt // number of iterations (n <= 5)
-
-	// generate the triangle for iteration 0
 	val triangle = Array.ofDim[Char](Rows, Columns)
 	(0 until Rows) foreach (x => triangle(x) = ones(x))
+	print(triangle)
 
-	val result = iterate(n, triangle, 32, 63)
+	dashTriangle(triangle.reverse, List.range(Rows / 2, Rows), List.range(1 + Columns / 4, 3 * Columns / 4))
 }
