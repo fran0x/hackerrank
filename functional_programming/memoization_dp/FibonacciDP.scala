@@ -2,7 +2,7 @@
 
 // applying dynamic programming; performance goes from O(2^n) to O(n)
 // my first approach was based on BigInt but 4th test case timed out: I did not pay attention to the point about module (see link below)
-object Fibonacci extends App {
+object FibonacciDP extends App {
 
   import scala.annotation.tailrec
   
