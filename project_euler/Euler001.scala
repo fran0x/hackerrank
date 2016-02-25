@@ -1,10 +1,12 @@
 //https://www.hackerrank.com/contests/projecteuler/challenges/euler001
 
-//https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle
+//multiples of 3 and 5
 object Euler001 extends App {
 
+	//easy choice, not good performance
 	//(1 until N).view.filter(x => x % 3 == 0 || x % 5 == 0).sum
 
+	//https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle
 	//https://www.quora.com/What-is-the-sum-of-all-the-multiples-of-3-or-5-below-1000
 	def f(n: Int) = (n * n + n) / 2
 
