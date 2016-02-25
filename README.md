@@ -6,6 +6,8 @@ Exercises from HackerRank
 ## Summary
 This a personal project for practicing with Scala programming language via [HackerRank](https://www.hackerrank.com/) challenges.
 
-The exercises are included in the Domain "Functional Programming".
+The exercises included are from
+* Domain "Functional Programming"
+* Contest "Project Euler" _(just started!)_
 
 *Please do not copy the solutions here to pass the exercises: instead of that I recommend you to find your own implementation and only then compare with the implementation I made (and please post a comment / give some feedback!).*
