@@ -3,6 +3,9 @@
 //https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle
 object Euler001 extends App {
 
+	//(1 until N).view.filter(x => x % 3 == 0 || x % 5 == 0).sum
+
+	//https://www.quora.com/What-is-the-sum-of-all-the-multiples-of-3-or-5-below-1000
 	def f(n: Int) = (n * n + n) / 2
 
 	val T = io.StdIn.readInt
