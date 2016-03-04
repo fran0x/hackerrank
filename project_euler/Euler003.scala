@@ -3,10 +3,9 @@
 //largest prime factor
 object Euler003 extends App {
 
-	def isPrime(n: Int) = (2 until n).forall(d => n % d != 0)
-	def largestPrimeFactor(n: Int) = (1 to math.sqrt(n).toInt).filter(isPrime(_)).filter(n % _ == 0).last
+	def factors(n: Long):List[Long] = (2 to math.sqrt(n).toInt).find(n % _ == 0).fold(List(n))(i => i.toLong :: factors(n / i))
 
 	val lines = io.Source.stdin.getLines
 	val t = lines.take(1).toList(0).toInt
-	lines.take(t).toList.map(_.toInt).map(n => println(largestPrimeFactor(n)))
+	lines.take(t).toList.map(_.toLong).map(n => println(factors(n).last))
 }
