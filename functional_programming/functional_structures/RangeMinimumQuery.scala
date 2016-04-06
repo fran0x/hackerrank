@@ -9,17 +9,17 @@ object RangeMinimumQuery extends App {
 		def min(target: Range): Int
 	}
 	case class Leaf(idx: Int, min: Int) extends SegmentTree {
-		println(idx + "-" + idx + ":" + min)
+		//println(idx + "-" + idx + ":" + min)
 		override def min(target: Range): Int = min
 	}
 	case class Node(range: Range, min: Int, leftTree: SegmentTree, rightTree: SegmentTree) extends SegmentTree {
-		println(range.left + "-" + range.right + ":" + min)		
+		//println(range.left + "-" + range.right + ":" + min)		
 		override def min(target: Range): Int = {
 			if (target == range) min
 			else {
 				val n = (range.left + range.right) / 2
-				if (n < range.left) rightTree.min(target)
-				else if (n > range.right) leftTree.min(target)
+				if (n < target.left) rightTree.min(target)
+				else if (n > target.right) leftTree.min(target)
 				else math.min(leftTree.min(Range(target.left, n)), rightTree.min(Range(n + 1, target.right))) 
 			}
 		}
