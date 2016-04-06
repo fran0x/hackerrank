@@ -15,11 +15,12 @@ object RangeMinimumQuery extends App {
 	case class Node(range: Range, min: Int, leftTree: SegmentTree, rightTree: SegmentTree) extends SegmentTree {
 		//println(range.left + "-" + range.right + ":" + min)		
 		override def min(target: Range): Int = {
+            //println(range.left + "-" + range.right + "::" + target.left + "-" + target.right)
 			if (target == range) min
 			else {
 				val n = (range.left + range.right) / 2
 				if (n < target.left) rightTree.min(target)
-				else if (n > target.right) leftTree.min(target)
+				else if (n + 1 > target.right) leftTree.min(target)
 				else math.min(leftTree.min(Range(target.left, n)), rightTree.min(Range(n + 1, target.right))) 
 			}
 		}
@@ -48,5 +49,5 @@ object RangeMinimumQuery extends App {
 
 	//Q map { case Array(left, right) => println(A.slice(left, right).min) }
 	val root = SegmentTree.build(A)
-	Q map { case Array(left, right) => println(root.min(Range(left, right))) }	
+	Q map { case Array(left, right) => println(root.min(Range(left, right))) }
 }
