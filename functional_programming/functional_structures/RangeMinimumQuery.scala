@@ -1,5 +1,6 @@
 //https://www.hackerrank.com/challenges/range-minimum-query
 
+// see https://en.wikipedia.org/wiki/Range_minimum_query
 object RangeMinimumQuery extends App {
 
 	case class Range(left: Int, right: Int)
