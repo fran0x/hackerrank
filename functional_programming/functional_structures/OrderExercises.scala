@@ -16,7 +16,10 @@ object OrderExercises extends App {
 	
 	// ...but that´s not enough to solve this problem thus try the following:
 	// run kadane and return a triplet (max, start_idx, end_idx)
-	// recursively run kadane in both sides (0 to start_idx, end_idx to end), add more maxs
+	// recursively
+	// run kadane in both sides (0 to start_idx, end_idx to end) to produce maxleft and maxright
+	// return max(maxleft, maxright)
+	// run kadane ...
 	
 	val lines = io.Source.stdin.getLines	
 	val Array(n, k) = lines.take(1).toList(0).split(" ").map(_.toInt)
