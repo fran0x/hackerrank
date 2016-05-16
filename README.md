@@ -14,8 +14,8 @@ The exercises included are from:
 
 ## TODO
 
-- [ ] Finish (OrderExercises)[https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/functional_structures/OrderExercises.scala] problem
-- [ ] Finish (FilterElements)[https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/recursion/FilterElements.scala]
-- [ ] Upload latest of (RemoveDuplicates)[https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/adhoc/RemoveDuplicates.scala]
-- [ ] Upload latest of (RecursiveTrees)[https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/recursion/RecursiveTrees.scala]
-- [ ] Start (PrisonTransport)[https://www.hackerrank.com/challenges/prison-transport] and more... (TO BE COMPLETED)
+- [ ] Finish [OrderExercises](https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/functional_structures/OrderExercises.scala) problem
+- [ ] Finish [FilterElements](https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/recursion/FilterElements.scala)
+- [ ] Upload latest of [RemoveDuplicates](https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/adhoc/RemoveDuplicates.scala)
+- [ ] Upload latest of [RecursiveTrees](https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/recursion/RecursiveTrees.scala)
+- [ ] Start [PrisonTransport](https://www.hackerrank.com/challenges/prison-transport) and more... (TO BE COMPLETED)
