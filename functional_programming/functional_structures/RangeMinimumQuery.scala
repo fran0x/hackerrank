@@ -1,5 +1,6 @@
 //https://www.hackerrank.com/challenges/range-minimum-query
 
+// see https://en.wikipedia.org/wiki/Range_minimum_query
 object RangeMinimumQuery extends App {
 
 	case class Range(left: Int, right: Int)
@@ -47,7 +48,7 @@ object RangeMinimumQuery extends App {
 	val A = lines.take(1).toList(0).split(" ").map(_.toInt)
 	val Q = lines.take(n).toList.map(_.split(" ").map(_.toInt))
 
-	//Q map { case Array(left, right) => println(A.slice(left, right).min) }
-	val root = SegmentTree.build(A)
-	Q map { case Array(left, right) => println(root.min(Range(left, right))) }
+	//Q map { case Array(left, right) => println(A.slice(left, right).min) } // O(n)
+	val root = SegmentTree.build(A) // O(n lg(n))
+	Q map { case Array(left, right) => println(root.min(Range(left, right))) } // O(lg(n))
 }
