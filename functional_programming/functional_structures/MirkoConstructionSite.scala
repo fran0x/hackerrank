@@ -3,24 +3,32 @@
 object MirkoConstructionSite extends App {
 
 	val Array(n, q) = io.StdIn.readLine().split(' ').toArray.map(_.toInt) // n = number of buildings, q = number of queries
-	val base = io.StdIn.readLine().split(' ').toArray.map(_.toInt) // base height
-	val step = io.StdIn.readLine().split(' ').toArray.map(_.toInt) // step height
+	val base = io.StdIn.readLine().split(' ').toList.map(_.toInt) // base height
+	val step = io.StdIn.readLine().split(' ').toList.map(_.toInt) // step height
 
-	case class Query(i: Int, q: Int) // i: building index; q: number of steps
+	// (bs: building indexes, q: steps) = Map(height -> building index)
+	def build(bs:List[Int], q: Int) = bs.map(b => (base(b) + step(b) * q, b)).sorted.toMap
 
-	import scala.collection.mutable.{HashMap ⇒ MMap}
-	val mem = MMap[Query, Int]() // let's cache prev results
+	// buildings (indexes) in the game
+	var buildings = (0 until n).toList
 
-	def build(q: Int) = (0 until n) map (i => mem getOrElseUpdate(Query(i, q), base(i) + step(i) * q))
-	def find(q: Int) = build(q).zipWithIndex.maxBy(x => (x._1, x._2))._2 + 1 // see http://reactive.xploregroup.be/blog/8/Sorting-on-multiple-fields-and-Tuples
+	// create a list of tuples (query, position)	
+	var queries = List[Int]()
+	for (_ <- 1 to q) queries ++= List(io.StdIn.readInt())
+	val sortedQueries = queries.zipWithIndex.sorted // List[(query, original position)]
 
-	for (_ <- 1 to q) println(find(io.StdIn.readInt()))
-	
-	// try the following:
-	// 1. read all steps and get the max
-	// 2. start by the min step and calculate order
-	// 3. continue with next step (reuse prev calculation?) and compare order:
-	//    a. no changes then same result
-	//    b. changes then last building is candidate to be ignored for further calculations
-	//    c. by removing buildings we will eventually reach a point in which only 1 building will remain
+	var answers = Map[Int, Int]() // Map(query -> building index)
+
+	// this is to get rid of buildings that get a worse position from iteration to iteration	
+	var prev = Map[Int, Int]()
+	def down(x:(Int, Int)) = if (prev(x._1) > x._2) true else false
+
+	for (query <- sortedQueries) {
+		val actual = build(buildings, query._1)
+		answers ++= Map(query._1 -> actual.head._1)
+
+		if (!prev.isEmpty) buildings = actual.filterNot(down).unzip._1.toList
+		prev = actual
+	}
+	for (query <- queries) println(answers(query))
 }
