@@ -30,5 +30,5 @@ object MirkoConstructionSite extends App {
 		if (!prev.isEmpty) buildings = actual.filterNot(down).unzip._1.toList
 		prev = actual
 	}
-	for (query <- queries) println(answers(query))
+	for (query <- queries) println(answers(query))  
 }
