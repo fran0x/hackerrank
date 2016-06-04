@@ -14,8 +14,8 @@ The exercises included are from:
 
 ## TODO
 
-- [ ] [Functional Structures > OrderExercises](https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/functional_structures/OrderExercises.scala)
-- [ ] [Functional Structures > MirkoConstructionSite](https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/functional_structures/MirkoConstructionSite.scala) _(note: still strugling due to the performance test cases)_
-- [ ] [Recursion > CrossWords101](https://github.com/flopezlasanta/hackerrank/blob/master/functional_programming/functional_structures/CrossWords101.scala)
+- [ ] [Functional Structures > OrderExercises](https://github.com/flopezlasanta/hackerrank/blob/master/src/functional_programming/functional_structures/OrderExercises.scala)
+- [ ] [Functional Structures > MirkoConstructionSite](https://github.com/flopezlasanta/hackerrank/blob/master/src/functional_programming/functional_structures/MirkoConstructionSite.scala) _(note: still strugling due to the performance test cases)_
+- [ ] [Recursion > CrossWords101](https://github.com/flopezlasanta/hackerrank/blob/master/src/functional_programming/functional_structures/CrossWords101.scala)
 - [ ] NEW [Memoization and DP > Different Ways](https://www.hackerrank.com/challenges/different-ways-fp)
 - [ ] NEW [Functional Structures > PrisonTransport](https://www.hackerrank.com/challenges/prison-transport)
