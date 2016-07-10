@@ -1,7 +1,7 @@
 # HackerRank
 Exercises from HackerRank
 
-[![Travis CI Status](https://travis-ci.org/flopezlasanta/hackerrank.svg?branch=master)](https://travis-ci.org/flopezlasanta/hackerrank)
+[![Travis CI Status](https://travis-ci.org/flopezlasanta/hackerrank.svg?branch=master)](https://travis-ci.org/flopezlasanta/hackerrank) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 ## Summary
 This a personal project for practicing with Scala programming language via [HackerRank](https://www.hackerrank.com/) challenges.
